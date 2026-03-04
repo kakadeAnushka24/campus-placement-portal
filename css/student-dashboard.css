@@ -1,0 +1,82 @@
+.main {
+    margin-left: 245px;
+    min-height: 100vh;
+    padding: 2rem 2rem
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.8rem
+}
+
+.greeting h1 {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em
+}
+
+.greeting p {
+    color: var(--muted);
+    font-size: 0.86rem;
+    margin-top: 0.2rem
+}
+
+.topbar-right {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center
+}
+
+.edit-profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    padding: 0.55rem 1.2rem;
+    border-radius: 10px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    transition: all 0.2s;
+}
+
+.edit-profile-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px)
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+    position: relative
+}
+
+.icon-btn:hover {
+    border-color: var(--blue)
+}
+
+.notif-dot {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 7px;
+    height: 7px;
+    background: var(--coral);
+    border-radius: 50%;
+    border: 2px solid var(--white)
+}
