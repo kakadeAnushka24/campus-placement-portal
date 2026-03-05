@@ -20,6 +20,25 @@ function validateStep1() {
     return ok;
   }
 
+  function validateStep2() {
+    let ok = true;
+    const checks = [
+      ['college',  v => v.trim().length > 0],
+      ['branch',   v => v !== ''],
+      ['passYear', v => v !== ''],
+      ['cgpa',     v => v !== '' && +v >= 0 && +v <= 10],
+    ];
+    checks.forEach(([id, fn]) => {
+      const el = document.getElementById(id);
+      const err = document.getElementById('err-' + id);
+      const valid = fn(el.value);
+      el.classList.toggle('error', !valid);
+      err.classList.toggle('show', !valid);
+      if (!valid) ok = false;
+    });
+    return ok;
+  }
+
 function nextStep(from) {
     const valid = from === 1 ? validateStep1() : from === 2 ? validateStep2() : true;
     if (!valid) return;
