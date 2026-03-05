@@ -93,5 +93,5 @@ function nextStep(from) {
     if (!validateStep3()) return;
     document.getElementById('panel3').classList.remove('active');
     document.getElementById('successBox').classList.add('show');
-    showToast('🎉 Registration successful! Welcome to CampusHire.');
+    showToast(' Registration successful! Welcome to CampusHire.');
   }
