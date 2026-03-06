@@ -52,24 +52,6 @@ Just open the file in a browser and you're live. That's it.
 |  **Toast Notifications** | Elegant animated feedback on every action |
 | **Smooth Animations** | `fadeUp`, staggered reveals, hover micro-interactions |
 |  **Responsive Layout** | Fully mobile-friendly with CSS Grid & Flexbox |
-
----
-
-## 🛠️ Tech Stack
-
-```
-┌─────────────────────────────────────────┐
-│              BUILT WITH                 │
-│                                         │
-│   HTML5   ──────  Structure & Markup    │
-│   CSS3    ──────  Styles & Animations   │
-│   JS ES6  ──────  Logic & State         │
-│                                         │
-│   Fonts   ──────  Clash Display         │
-│                   Bricolage Grotesque   │
-└─────────────────────────────────────────┘
-```
-
 ---
 
 ### Typography
@@ -78,8 +60,6 @@ Just open the file in a browser and you're live. That's it.
   Clash Display        →  Headings · Titles · Numbers · Logos
   Bricolage Grotesque  →  Body · Labels · Inputs · Descriptions
 ```
-
----
 
 ## 🚀 Getting Started
 
@@ -132,18 +112,6 @@ localStorage.campushire_apps = [
 | 6 | Backend Engineer |  Zomato | ₹20 LPA | Gurugram | Full-Time |
 | 7 | Product Intern |  Meesho | ₹45k/mo | Remote | Internship |
 | 8 | Mechanical Engineer |  L&T | ₹8 LPA | Pune | Full-Time |
-
----
-
-## 📋 Application Status Flow
-
-```
-  [ Applied ] ──▶ [ In Review ] ──▶ [ Interview ] ──▶ [ Offered  ✅ ]
-                                                    ╲
-                                                      [ Rejected ❌ ]
-```
-
-Each status has its own color-coded badge and can be manually updated from the Applications page.
 
 ---
 
