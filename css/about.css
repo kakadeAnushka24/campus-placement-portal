@@ -1,49 +1,333 @@
-.Team-section {
-    padding: 30px;
-    background: #f5f5f5;
-}
+* {
 
-
-.Team-container {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-
-.Team-card {
-    width: 200px;
-    background: #AAB8C3;
-    text-align: center;
-    padding: 15px;
-    border-radius: 10px;
-    color: #1A3D64;
-    border: 2px solid #1A3D64;
-}
-.Team-card:hover{
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-}
-
-.Team-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #1A3D64;
-}
-
-
-.Team-card h3 {
-    margin: 10px 0 5px;
-    font-size: 16px;
-}
-
-
-.Team-card p {
     margin: 0;
-    font-size: 13px;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+
+    font-family: Arial;
+
+    background: #f5f0e8;
+
+}
+
+
+/* NAVBAR */
+
+.navbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background: white;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+.logo {
+
+    color: #e8650a;
+
+}
+
+.nav-links a {
+
+    margin: 0 10px;
+
+    text-decoration: none;
+
+    color: #333;
+
+}
+
+.btn-primary {
+
+    background: #e8650a;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 15px;
+
+    border-radius: 5px;
+
+}
+
+.btn-outline {
+
+    border: 1px solid #e8650a;
+
+    background: white;
+
+    padding: 8px 15px;
+
+    border-radius: 5px;
+
+}
+
+
+/* HERO */
+
+.hero {
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background: #1a1208;
+
+    color: white;
+
+}
+
+.about-hero p {
+  color: rgba(255,255,255,0.48);
+  font-size: 0.95rem;
+  max-width: 540px;
+  margin: 2rem auto 0; /* वरचा space वाढवला */
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* SECTION */
+
+.section {
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+}
+
+.section-title {
+
+    font-size: 30px;
+
+    margin-bottom: 40px;
+
+}
+
+
+/* FEATURES */
+
+.feature-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+.feature-card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    border: 1px solid #ddd;
+
+}
+
+.feature-card {
+
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+
+}
+
+.feature-card:hover {
+
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-color: #e8650a;
+
+}
+
+.icon {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* TEAM */
+
+.team-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+}
+
+.team-card {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    border: 1px solid #ddd;
+
+}
+
+
+
+.team-card img {
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+    margin-bottom: 10px;
+
+}
+
+.team-card {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    border: 1px solid #ddd;
+
+    text-align: center;
+
+    transition: all 0.3s ease;
+
+    cursor: pointer;
+
+}
+
+.team-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+    border-color: #e8650a;
+
+}
+
+
+/* JOIN */
+
+.join {
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background: linear-gradient(135deg,#e8650a a,#f28a3c);
+
+    color: rgb(17, 16, 16);
+
+}
+
+.join h2{
+
+    font-size: 32px;
+    margin-bottom: 20px;
+
+}
+
+.join p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.join button {
+
+    padding: 12px 25px;
+
+    border: none;
+
+    background: white;
+
+    color: #e8650a;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+}
+
+.join button:hover {
+
+    background: #1a1208;
+
+    color:white;
+
+    transform: translateY(-3px);
+}
+
+
+/* FOOTER */
+
+.footer {
+
+    text-align: center;
+
+    padding: 20px;
+
+    background: #1a1208;
+
+    color: white;
+
+}
+
+
+/* TOAST */
+
+#toast {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    right: 20px;
+
+    background: black;
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 5px;
+
+    display: none;
+
 }
