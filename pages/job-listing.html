@@ -1,9 +1,316 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Job-listing</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CampusHire Jobs</title>
+<link rel="stylesheet" href="./../css/job-listing.css">
+<script src="./../js/job-listing.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <h1>job listing</h1>
+
+<!-- Header -->
+
+<section class="header">
+
+<h1>🔥 Live Job Openings</h1>
+<p>Browse and apply to placement drives from top companies.</p>
+
+</section>
+
+
+<!-- Search + Filter -->
+
+<section class="search-section">
+
+<input type="text" id="searchInput" placeholder="Search by role, company or skill...">
+
+<div class="filters">
+
+<button class="filter-btn active" data-category="all">All</button>
+<button class="filter-btn" data-category="it">IT</button>
+<button class="filter-btn" data-category="finance">Finance</button>
+<button class="filter-btn" data-category="core">Core</button>
+
+</div>
+
+</section>
+
+
+<!-- Job Cards -->
+
+<section class="jobs">
+
+<div class="card" data-category="it">
+
+<span class="badge new">NEW</span>
+
+<h3>Software Engineer</h3>
+
+<p class="company">TCS • IT</p>
+
+<div class="skills">
+<span>Java</span>
+<span>SQL</span>
+<span>DSA</span>
+</div>
+
+<div class="bottom">
+<span class="salary">₹3.6 LPA</span>
+<button>Apply Now</button>
+</div>
+
+</div>
+
+
+<div class="card" data-category="it">
+
+<span class="badge hot">HOT</span>
+
+<h3>Associate Developer</h3>
+
+<p class="company">Infosys • IT</p>
+
+<div class="skills">
+<span>Python</span>
+<span>REST API</span>
+</div>
+
+<div class="bottom">
+<span class="salary">₹4.5 LPA</span>
+<button>Apply Now</button>
+</div>
+
+</div>
+
+
+<div class="card" data-category="it">
+
+<h3>Data Analyst</h3>
+
+<p class="company">Cognizant • IT</p>
+
+<div class="skills">
+<span>Excel</span>
+<span>Python</span>
+<span>BI</span>
+</div>
+
+<div class="bottom">
+<span class="salary">₹5.2 LPA</span>
+<button>Apply Now</button>
+</div>
+
+</div>
+
+
+<div class="card" data-category="it">
+
+<span class="badge hot">HOT</span>
+
+<h3>Cloud Support Eng.</h3>
+
+<p class="company">Amazon • IT</p>
+
+<div class="skills">
+<span>AWS</span>
+<span>Linux</span>
+</div>
+
+<div class="bottom">
+<span class="salary">₹8.0 LPA</span>
+<button>Apply Now</button>
+</div>
+
+</div>
+
+
+<div class="card" data-category="finance">
+
+<span class="badge new">NEW</span>
+
+<h3>Finance Analyst</h3>
+
+<p class="company">Deloitte • Finance</p>
+
+<div class="skills">
+<span>Excel</span>
+<span>Accounting</span>
+</div>
+
+<div class="bottom">
+<span class="salary">₹4.2 LPA</span>
+<button>Apply Now</button>
+</div>
+
+</div>
+
+
+<div class="card" data-category="core">
+
+<h3>Mechanical Design Eng.</h3>
+
+<p class="company">L&T • Core</p>
+
+<div class="skills">
+<span>CAD</span>
+<span>SolidWorks</span>
+</div>
+
+<div class="bottom">
+<span class="salary">₹6.0 LPA</span>
+<button>Apply Now</button>
+</div>
+
+</div>
+
+<div class="card">
+<div class="badge new">NEW</div>
+<h3>Finance Analyst</h3>
+<p>Deloitte - Finance</p>
+
+<div class="tags">
+<span>Finance</span>
+<span>Excel</span>
+<span>SAP</span>
+</div>
+
+<div class="card-footer">
+<h4>₹7.5 LPA</h4>
+<button onclick="applyJob('Finance Analyst')">Apply Now</button>
+</div>
+</div>
+
+
+<div class="card">
+<h3>Risk Associate</h3>
+<p>KPMG - Finance</p>
+
+<div class="tags">
+<span>Risk</span>
+<span>Finance</span>
+</div>
+
+<div class="card-footer">
+<h4>₹6.8 LPA</h4>
+<button onclick="applyJob('Risk Associate')">Apply Now</button>
+</div>
+</div>
+
+
+<div class="card">
+<h3>Mech Design Eng.</h3>
+<p>L&T - Core</p>
+
+<div class="tags">
+<span>AutoCAD</span>
+<span>SolidWorks</span>
+</div>
+
+<div class="card-footer">
+<h4>₹4.8 LPA</h4>
+<button onclick="applyJob('Mechanical Design Engineer')">Apply Now</button>
+</div>
+</div>
+
+
+<div class="card">
+<div class="badge new">NEW</div>
+<h3>Embedded Developer</h3>
+<p>KPIT - Core</p>
+
+<div class="tags">
+<span>C</span>
+<span>Embedded</span>
+<span>RTOS</span>
+</div>
+
+<div class="card-footer">
+<h4>₹5.5 LPA</h4>
+<button onclick="applyJob('Embedded Developer')">Apply Now</button>
+</div>
+</div>
+
+
+<div class="card">
+<div class="badge hot">HOT</div>
+<h3>Frontend Developer</h3>
+<p>Persistent - IT</p>
+
+<div class="tags">
+<span>React</span>
+<span>CSS</span>
+<span>JS</span>
+</div>
+
+<div class="card-footer">
+<h4>₹6.0 LPA</h4>
+<button onclick="applyJob('Frontend Developer')">Apply Now</button>
+</div>
+</div>
+
+
+<div class="card">
+<h3>Business Analyst</h3>
+<p>Capgemini - Finance</p>
+
+<div class="tags">
+<span>Communication</span>
+<span>JIRA</span>
+</div>
+
+<div class="card-footer">
+<h4>₹5.0 LPA</h4>
+<button onclick="applyJob('Business Analyst')">Apply Now</button>
+</div>
+</div>
+
+
+<div class="card">
+<h3>DevOps Engineer</h3>
+<p>HCL - IT</p>
+
+<div class="tags">
+<span>Docker</span>
+<span>CI/CD</span>
+<span>Linux</span>
+</div>
+
+<div class="card-footer">
+<h4>₹5.8 LPA</h4>
+<button onclick="applyJob('DevOps Engineer')">Apply Now</button>
+</div>
+</div>
+
+
+<div class="card">
+<div class="badge new">NEW</div>
+<h3>ML Engineer</h3>
+<p>Wipro - IT</p>
+
+<div class="tags">
+<span>Python</span>
+<span>TensorFlow</span>
+<span>ML</span>
+</div>
+
+<div class="card-footer">
+<h4>₹7.2 LPA</h4>
+<button onclick="applyJob('ML Engineer')">Apply Now</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
