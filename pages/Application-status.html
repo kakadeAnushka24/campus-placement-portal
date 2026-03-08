@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>CampusHire – My Applications</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-
-<link rel="stylesheet" href="application status.css">
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/application status.css"/>
 </head>
-
 <body>
 
 <nav class="navbar">
@@ -18,109 +14,186 @@
     <span class="nav-logo-dot"></span>CampusHire
   </a>
   <div class="nav-links">
-    <a href="#">Home</a>
-    <a href="#">Jobs</a>
-    <a class="active" href="#">Applications</a>
-    <a href="#">Dashboard</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+    <a href="../index.html">Home</a>
+    <a href="../pages/job-listing.html">Jobs</a>
+    <a class="active" href="../pages/Application-status.html">Applications</a>
+    <a href="../pages/student-dashboard.html">Dashboard</a>
+    <a href="../pages/about.html">About</a>
+    <a href="../pages/contact.html">Contact</a>
   </div>
   <div class="nav-cta">
-    <button class="btn btn-outline">Login</button>
-    <button class="btn btn-primary">Register Free</button>
+    <button class="btn btn-outline"><a href="../pages/login.html">Login</a></button>
+    <button class="btn btn-primary"><a href="../pages/register.html">Register Free</a></button>
   </div>
 </nav>
 
 <div class="page-wrap">
 
-<section class="header">
+  <!-- ══════ HERO BANNER ══════ -->
+  <div class="status-hero">
+    <div class="status-hero-inner">
+      <div>
+        <div class="hero-tag-pill">📋 Application Tracker</div>
+        <h1>My Applications</h1>
+        <p>Track all your job applications in one place — real-time status updates</p>
+      </div>
+      <button class="btn btn-primary btn-lg" onclick="openAddModal()">+ Add Application</button>
+    </div>
+  </div>
 
-<h1>📂 My Applications</h1>
-<p>Track all your job applications in one place</p>
+  <!-- ══════ MAIN CONTENT ══════ -->
+  <div class="status-wrap">
 
-<button class="add">+ Add Application</button>
+    <!-- Pipeline Funnel -->
+    <div class="pipeline-row">
+      <div class="pipe-stage">
+        <div class="pipe-count" id="pc-applied">0</div>
+        <div class="pipe-lbl">Applied</div>
+      </div>
+      <div class="pipe-stage hi">
+        <div class="pipe-count" id="pc-review">0</div>
+        <div class="pipe-lbl">In Review</div>
+      </div>
+      <div class="pipe-stage">
+        <div class="pipe-count" id="pc-interview">0</div>
+        <div class="pipe-lbl">Interview</div>
+      </div>
+      <div class="pipe-stage">
+        <div class="pipe-count" id="pc-offer">0</div>
+        <div class="pipe-lbl">Offered</div>
+      </div>
+      <div class="pipe-stage">
+        <div class="pipe-count" id="pc-rejected">0</div>
+        <div class="pipe-lbl">Rejected</div>
+      </div>
+    </div>
 
-</section>
+    <!-- Stat Cards -->
+    <div class="stat5-row">
+      <div class="s5" style="animation-delay:0s">
+        <div class="s5-val" id="st-total" style="color:var(--orange)">0</div>
+        <div class="s5-lbl">Total Applied</div>
+      </div>
+      <div class="s5" style="animation-delay:0.07s">
+        <div class="s5-val" id="st-review" style="color:#4338CA">0</div>
+        <div class="s5-lbl">In Review</div>
+      </div>
+      <div class="s5" style="animation-delay:0.13s">
+        <div class="s5-val" id="st-interview" style="color:var(--violet)">0</div>
+        <div class="s5-lbl">Interviews</div>
+      </div>
+      <div class="s5" style="animation-delay:0.19s">
+        <div class="s5-val" id="st-offer" style="color:var(--green)">0</div>
+        <div class="s5-lbl">Offers 🎉</div>
+      </div>
+      <div class="s5" style="animation-delay:0.25s">
+        <div class="s5-val" id="st-rejected" style="color:var(--coral)">0</div>
+        <div class="s5-lbl">Rejected</div>
+      </div>
+    </div>
 
+    <!-- Toolbar: Search + Tabs -->
+    <div class="toolbar">
+      <div class="status-tabs">
+        <div class="stab active" onclick="filterTab('all',this)">All</div>
+        <div class="stab" onclick="filterTab('Applied',this)">Applied</div>
+        <div class="stab" onclick="filterTab('In Review',this)">In Review</div>
+        <div class="stab" onclick="filterTab('Interview',this)">Interview</div>
+        <div class="stab" onclick="filterTab('Offered',this)">Offers</div>
+        <div class="stab" onclick="filterTab('Rejected',this)">Rejected</div>
+      </div>
+      <div class="search-bar">
+        <span>🔍</span>
+        <input type="text" placeholder="Search company or role..." id="appSearch" oninput="renderStatusApps()"/>
+      </div>
+    </div>
 
-<div class="modal" id="applicationModal">
+    <!-- Applications List -->
+    <div id="statusAppsList"></div>
 
-<div class="modal-content">
+  </div><!-- /.status-wrap -->
 
-<span class="close">&times;</span>
+  <!-- ══════ FOOTER ══════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand"><span class="nav-logo-dot"></span>CampusHire</div>
+        <p class="footer-desc">India's leading campus placement platform connecting students to top recruiters.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Platform</div>
+        <a href="#">Browse Jobs</a>
+        <a href="#">Track Applications</a>
+        <a href="#">Dashboard</a>
+        <a href="#">Register</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Support</div>
+        <a href="#">Help Center</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 CampusHire. All rights reserved.</span>
+      <span>Made with ❤️ for Indian students</span>
+    </div>
+  </footer>
 
-<h2>Add Application</h2>
+</div><!-- /.page-wrap -->
 
-<form id="appForm">
-
-<label>Company Name</label>
-<input type="text" placeholder="Enter company name" required>
-
-<label>Role</label>
-<input type="text" placeholder="Enter job role" required>
-
-<label>Application ID</label>
-<input type="text" placeholder="Example: UJP101" required>
-
-<label>Status</label>
-<select>
-<option>Applied</option>
-<option>In Review</option>
-<option>Interview</option>
-<option>Offered</option>
-<option>Rejected</option>
-</select>
-
-<label>Date</label>
-<input type="date" required>
-
-<button type="submit" class="submit-btn">Add Application</button>
-
-</form>
-
+<!-- ══════ ADD APPLICATION MODAL ══════ -->
+<div class="modal-overlay hidden" id="modalOverlay" onclick="if(event.target===this)closeAddModal()">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">➕ Add Application</div>
+      <button class="modal-close" onclick="closeAddModal()">✕</button>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Job Title *</label>
+        <input type="text" id="addTitle" class="form-input" placeholder="e.g. Software Engineer"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Company *</label>
+        <input type="text" id="addCo" class="form-input" placeholder="e.g. Google"/>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">CTC / Stipend</label>
+        <input type="text" id="addCtc" class="form-input" placeholder="e.g. ₹24 LPA"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Status</label>
+        <select id="addStatus" class="form-input">
+          <option>Applied</option>
+          <option>In Review</option>
+          <option>Interview</option>
+          <option>Offered</option>
+          <option>Rejected</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Company Emoji / Icon</label>
+      <input type="text" id="addIcon" class="form-input" placeholder="e.g. 🔍 💼 📦 (leave blank for default)"/>
+    </div>
+    <div id="addErr" style="background:var(--coral-s);color:var(--coral);border-radius:8px;padding:0.6rem 0.9rem;font-size:0.82rem;margin-bottom:0.9rem;display:none"></div>
+    <div style="display:flex;gap:0.7rem;justify-content:flex-end">
+      <button class="btn btn-outline" onclick="closeAddModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="addApplication()">Save Application</button>
+    </div>
+  </div>
 </div>
-</div>
 
-<section class="stats">
-
-<div class="stat">
-<h2>12</h2>
-<p>Applied</p>
-</div>
-
-<div class="stat">
-<h2>4</h2>
-<p>In Review</p>
-</div>
-
-<div class="stat">
-<h2>2</h2>
-<p>Interview</p>
-</div>
-
-<div class="stat">
-<h2>1</h2>
-<p>Offer</p>
-</div>
-
-<div class="stat">
-<h2>3</h2>
-<p>Rejected</p>
-</div>
-
-</section>
-
-
-<section class="applications">
-
-<div class="card">
-
-<h3>Frontend Developer</h3>
-<p class="company">Google</p>
-
-<span class="badge review">In Review</span>
-
-<script src="application status.js"></script>
-
+<!-- TOAST BOX -->
+<div class="toast-box" id="toastBox"></div>
+<script src="../js/application status.js status.js"></script>
 </body>
 </html>

@@ -1,4 +1,7 @@
-/* HEADER CSS */
+/* ══════════════════════════════════════════
+   CAMPUSHIRE — APPLICATION STATUS PAGE
+   Theme: Orange · Black · Cream
+   ══════════════════════════════════════════ */
 *,
 *::before,
 *::after {
@@ -8,79 +11,119 @@
 }
 
 :root {
-    --bg: #F5F0E8;
+    /* Cream */
+    --cream: #F5F0E8;
+    --cream2: #EDE7D9;
+    --cream3: #E2D9C8;
     --white: #FFFDF8;
-    --border: #DDD3C2;
-
-    --ink2: #baad9a;
-    --muted: #ccc3b5;
+    /* Black */
+    --ink: #1A1208;
+    --ink2: #3D2E18;
+    --muted: #7A6A52;
+    --muted2: #B0A08A;
+    /* Orange */
     --orange: #E8650A;
     --orange-deep: #C4500A;
     --orange-s: #FDF0E6;
+    --orange-mid: #F28A3C;
+    --amber: #F0A830;
+    --amber-s: #FEF6E0;
+    /* Status colors */
+    --green: #2D7A4F;
+    --green-s: #E6F5ED;
+    --violet: #6D3AC7;
+    --violet-s: #EDE8FA;
+    --coral: #D63B3B;
+    --coral-s: #FDEAEA;
+    --border: #DDD3C2;
+    --border2: #C8BB9F;
+}
+
+html {
+    scroll-behavior: smooth
 }
 
 body {
     font-family: 'Bricolage Grotesque', sans-serif;
-    background: var(--bg);
-    color: var(--ink)
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden
 }
 
+::-webkit-scrollbar {
+    width: 5px
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cream2)
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--orange);
+    border-radius: 10px
+}
+
+/* ══════ NAVBAR ══════ */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 64px;
     background: rgba(255, 253, 248, 0.96);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(18px);
     border-bottom: 1.5px solid var(--border);
-    z-index: 999;
+    z-index: 300;
     display: flex;
     align-items: center;
-    padding: 0 2rem;
-    gap: 1rem
+    padding: 0 2.5rem;
+    gap: 1.5rem
 }
 
 .nav-logo {
     font-family: 'Clash Display', sans-serif;
     font-weight: 700;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--ink);
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    text-decoration: none;
+    cursor: pointer;
     margin-right: auto;
-    text-decoration: none;
-    color:#baad9a;
-    
+    text-decoration: none
 }
 
-.nav-dot {
-    width: 7px;
-    height: 7px;
+.nav-logo-dot {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: var(--orange);
-    box-shadow: 0 0 6px var(--orange)
+    box-shadow: 0 0 8px var(--orange)
 }
 
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 0.1rem
 }
 
 .nav-links a {
-    font-size: 0.83rem;
+    text-decoration: none;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--ink2);
-    padding: 0.38rem 0.75rem;
-    border-radius: 7px;
-    text-decoration: none;
-    transition: all 0.18s;
+    padding: 0.42rem 0.8rem;
+    border-radius: 8px;
+    transition: all 0.2s;
     cursor: pointer
 }
 
-.nav-links a:hover,
+.nav-links a:hover {
+    background: var(--orange-s);
+    color: var(--orange)
+}
+
 .nav-links a.active {
     background: var(--orange-s);
     color: var(--orange);
@@ -89,28 +132,29 @@ body {
 
 .nav-cta {
     display: flex;
-    gap: 0.45rem;
-    margin-left: 0.6rem
+    gap: 0.5rem;
+    margin-left: 0.8rem
 }
 
+/* ══════ BUTTONS ══════ */
 .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
-    padding: 0.45rem 0.95rem;
-    border-radius: 9px;
-    font-size: 0.82rem;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 0.83rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.18s;
+    transition: all 0.2s;
+    text-decoration: none;
     border: none;
-    font-family: 'Bricolage Grotesque', sans-serif;
-    text-decoration: none
+    font-family: 'Bricolage Grotesque', sans-serif
 }
 
 .btn-outline {
     background: transparent;
-    border: 1.5px solid var(--border);
+    border: 1.5px solid var(--border2);
     color: var(--ink2)
 }
 
@@ -121,107 +165,36 @@ body {
 
 .btn-primary {
     background: var(--orange);
-    color: #fff
+    color: #fff;
+    box-shadow: 0 3px 12px rgba(232, 101, 10, 0.28)
 }
 
 .btn-primary:hover {
     background: var(--orange-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(232, 101, 10, 0.38)
+}
+
+.btn-dark {
+    background: var(--ink);
+    color: #fff
+}
+
+.btn-dark:hover {
+    background: var(--ink2);
     transform: translateY(-1px)
 }
 
-/* Hamburger (mobile) */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 4px
+.btn-lg {
+    padding: 0.72rem 1.7rem;
+    font-size: 0.93rem;
+    border-radius: 12px
 }
 
-.hamburger span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: var(--ink);
-    border-radius: 2px;
-    transition: all 0.28s
-}
-
-.hamburger.open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg)
-}
-
-.hamburger.open span:nth-child(2) {
-    opacity: 0
-}
-
-.hamburger.open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg)
-}
-
-/* Mobile dropdown */
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    border-bottom: 1.5px solid var(--border);
-    padding: 1rem 1.5rem 1.5rem;
-    z-index: 998;
-    flex-direction: column;
-    gap: 0.3rem;
-    box-shadow: 0 10px 28px rgba(26, 18, 8, 0.1)
-}
-
-.mobile-menu.open {
-    display: flex
-}
-
-.mobile-menu a {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--ink2);
-    padding: 0.6rem 0.8rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.18s;
-    cursor: pointer
-}
-
-.mobile-menu a:hover,
-.mobile-menu a.active {
-    background: var(--orange-s);
-    color: var(--orange);
-    font-weight: 600
-}
-
-.mobile-cta {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 0.8rem;
-    padding-top: 0.8rem;
-    border-top: 1.5px solid var(--border)
-}
-
-.mobile-cta .btn {
-    flex: 1;
-    justify-content: center
-}
-
-@media(max-width:680px) {
-
-    .nav-links,
-    .nav-cta {
-        display: none
-    }
-
-    .hamburger {
-        display: flex
-    }
+.btn-sm {
+    padding: 0.32rem 0.75rem;
+    font-size: 0.76rem;
+    border-radius: 7px
 }
 
 *::after {
@@ -230,15 +203,6 @@ body {
     padding: 0
 }
 
-:root {
-    --ink: #0a0a12;
-    --paper: #f5f3ee;
-    --accent: #c16138;
-    --gold: #e8c84a;
-    --muted: #7a7870;
-    --border: #e0ddd5;
-    --success: #1a7a3c;
-}
 
 html {
     scroll-behavior: smooth
@@ -265,109 +229,6 @@ body {
     border-radius: 10px
 }
 
-/* ── NAVBAR ── */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 70px;
-    background: var(--ink);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2rem;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-    z-index: 100;
-}
-
-.nav-left,
-.nav-center,
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.nav-center {
-    flex: 1;
-    justify-content: center;
-}
-
-.nav-link {
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-}
-
-.nav-link:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.nav-link.active {
-    color: #fff;
-    background: rgba(193, 97, 56, 0.2);
-    border-bottom: 2px solid var(--accent);
-}
-
-.logo {
-    font-family: 'Clash Display', sans-serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.user-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--success));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: #fff;
-}
-
-.user-name {
-    color: #fff;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.logo-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 8px var(--accent);
-    flex-shrink: 0
-}
-
-.online-pip {
-    width: 7px;
-    height: 7px;
-    background: var(--success);
-    border-radius: 50%;
-    margin-left: auto;
-    box-shadow: 0 0 5px var(--success)
-}
 
 /* ── MAIN ── */
 .main {

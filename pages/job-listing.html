@@ -1,19 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CampusHire Jobs</title>
-<link rel="stylesheet" href="./../css/job-listing.css">
-<script src="./../js/job-listing.js"></script>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusHire — Live Jobs</title>
+      <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+ <link rel="stylesheet" href="../css/job-listing.css" />
 </head>
-
 <body>
-    <h1>job listing</h1>
-</body>
 
+  <!-- NAV -->
+<nav class="navbar">
+  <a class="nav-logo" href="#">
+    <span class="nav-logo-dot"></span>CampusHire
+  </a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../pages/jobs.html">Jobs</a>
+    <a class="active" href="../pages/application-status.html">Applications</a>
+    <a href="../pages/dashboard.html">Dashboard</a>
+    <a href="../pages/about.html">About</a>
+    <a href="../pages/contact.html">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <button class="btn btn-outline"><a href="../pages/login.html">Login</a></button>
+    <button class="btn btn-primary"><a href="../pages/register.html">Register Free</a></button>
+  </div>
+</nav>
+  <!-- HERO -->
+  <section class="jobs-hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="badge-pill">🔥 142 Active Drives</div>
+      <h1>Live Job<br/><em>Openings</em></h1>
+      <p>Browse and apply to placement drives from top companies recruiting on campus.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">142</span><span class="stat-label">Active Drives</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">38</span><span class="stat-label">Companies</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">6</span><span class="stat-label">New Today</span></div>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="jobs-filters">
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="filter-input" placeholder="Search by role, company or skill…" oninput="filterJobs(this.value)" />
+    </div>
+    <div class="filter-pills">
+      <button class="filter-btn active" onclick="filterByType(this,'all')">All</button>
+      <button class="filter-btn" onclick="filterByType(this,'IT')">💻 IT</button>
+      <button class="filter-btn" onclick="filterByType(this,'Finance')">💰 Finance</button>
+      <button class="filter-btn" onclick="filterByType(this,'Core')">⚙️ Core</button>
+    </div>
+  </div>
+
+  <!-- JOBS LIST -->
+  <div class="jobs-list" id="jobsList"></div>
+
+  <!-- EMPTY STATE -->
+  <div class="empty-state" id="emptyState" style="display:none">
+    <div class="empty-icon">🔍</div>
+    <h3>No jobs found</h3>
+    <p>Try adjusting your search or filter criteria.</p>
+  </div>
+
+  <script src="../js/job-listing.js"></script>
+</body>
 </html>
