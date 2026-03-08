@@ -128,7 +128,11 @@ The main objective of this project is to **simplify the placement process** and 
 
 ---
 
-## 📬 Contact
+## Contributors
+
+<a href="https://github.com/anjalimhase24/campus-placement-portal/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=anjalimhase24/campus-placement-portal" />
+</a>
 
 For any queries related to the project, feel free to contact.
 
