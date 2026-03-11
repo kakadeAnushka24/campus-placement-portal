@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CampusHire Jobs</title>
 <link rel="stylesheet" href="../css/job-listing.css">
+<script src="../js/job-listing.js"></script>
 </head>
 <body>
 
@@ -27,22 +28,203 @@
   </div>
 </nav>
 
-<div class="search-section">
+<div class="search-box">
 
-<input type="text" id="searchInput" placeholder="Search jobs">
+<input type="text" id="searchInput" placeholder="Search by role, company or skill">
 
 <div class="filters">
-
-<button class="filter active" data-category="all">All</button>
-<button class="filter" data-category="it">IT</button>
-<button class="filter" data-category="finance">Finance</button>
-<button class="filter" data-category="core">Core</button>
+<button onclick="filterJobs('all')">All</button>
+<button onclick="filterJobs('it')">IT</button>
+<button onclick="filterJobs('finance')">Finance</button>
+<button onclick="filterJobs('core')">Core</button>
+</div>
 
 </div>
+
+
+<div class="jobs-container">
+
+<!-- 1 -->
+<div class="job-card it">
+<h3>Software Engineer</h3>
+<p class="company">Google</p>
+<p>Bangalore • Batch 2025</p>
+
+<div class="skills">
+<span>DSA</span>
+<span>System Design</span>
+<span>Python</span>
 </div>
-<script src="../js/job-listing.js"></script>
-<section class="jobs-container" id="jobsContainer">
-</section>
+
+<div class="job-bottom">
+<h4>₹24 LPA</h4>
+<button onclick="applyJob('Google')">Apply Now</button>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="job-card finance">
+<h3>Investment Banking Analyst</h3>
+<p class="company">Goldman Sachs</p>
+<p>Mumbai • Batch 2025</p>
+
+<div class="skills">
+<span>Excel</span>
+<span>Valuation</span>
+<span>Financial Modelling</span>
+</div>
+
+<div class="job-bottom">
+<h4>₹18 LPA</h4>
+<button onclick="applyJob('Goldman Sachs')">Apply Now</button>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="job-card core">
+<h3>Mechanical Design Engineer</h3>
+<p class="company">Tata Motors</p>
+<p>Pune • Batch 2025</p>
+
+<div class="skills">
+<span>CAD</span>
+<span>SolidWorks</span>
+<span>FEA</span>
+</div>
+
+<div class="job-bottom">
+<h4>₹9 LPA</h4>
+<button onclick="applyJob('Tata Motors')">Apply Now</button>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="job-card it">
+<h3>Data Scientist</h3>
+<p class="company">Microsoft</p>
+<p>Hyderabad • Batch 2025</p>
+
+<div class="skills">
+<span>Python</span>
+<span>SQL</span>
+<span>ML</span>
+</div>
+
+<div class="job-bottom">
+<h4>₹22 LPA</h4>
+<button onclick="applyJob('Microsoft')">Apply Now</button>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="job-card finance">
+<h3>Risk Analyst</h3>
+<p class="company">JP Morgan</p>
+<p>Mumbai • Batch 2025</p>
+
+<div class="skills">
+<span>Risk Mgmt</span>
+<span>Python</span>
+<span>Statistics</span>
+</div>
+
+<div class="job-bottom">
+<h4>₹20 LPA</h4>
+<button onclick="applyJob('JP Morgan')">Apply Now</button>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="job-card it">
+<h3>Frontend Developer</h3>
+<p class="company">Flipkart</p>
+<p>Bangalore • Batch 2025</p>
+
+<div class="skills">
+<span>React</span>
+<span>TypeScript</span>
+<span>CSS</span>
+</div>
+
+<div class="job-bottom">
+<h4>₹16 LPA</h4>
+<button onclick="applyJob('Flipkart')">Apply Now</button>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="job-card core">
+<h3>Civil Structural Engineer</h3>
+<p class="company">L&T Construction</p>
+<p>Chennai • Batch 2025</p>
+
+<div class="skills">
+<span>STAAD Pro</span>
+<span>AutoCAD</span>
+<span>Revit</span>
+</div>
+
+<div class="job-bottom">
+<h4>₹10 LPA</h4>
+<button onclick="applyJob('L&T')">Apply Now</button>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="job-card finance">
+<h3>Quant Analyst</h3>
+<p class="company">DE Shaw</p>
+<p>Hyderabad • Batch 2025</p>
+
+<div class="skills">
+<span>Statistics</span>
+<span>C++</span>
+<span>Probability</span>
+</div>
+
+<div class="job-bottom">
+<h4>₹30 LPA</h4>
+<button onclick="applyJob('DE Shaw')">Apply Now</button>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="job-card it">
+<h3>Backend Developer</h3>
+<p class="company">Amazon</p>
+<p>Bangalore • Batch 2025</p>
+
+<div class="skills">
+<span>Java</span>
+<span>Spring Boot</span>
+<span>SQL</span>
+</div>
+
+<div class="job-bottom">
+<h4>₹28 LPA</h4>
+<button onclick="applyJob('Amazon')">Apply Now</button>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="job-card core">
+<h3>Electrical Engineer</h3>
+<p class="company">Siemens</p>
+<p>Pune • Batch 2025</p>
+
+<div class="skills">
+<span>PLC</span>
+<span>MATLAB</span>
+<span>Automation</span>
+</div>
+
+<div class="job-bottom">
+<h4>₹12 LPA</h4>
+<button onclick="applyJob('Siemens')">Apply Now</button>
+</div>
+</div>
+
+</div>
 
 <footer class="footer">
   <div class="footer-inner">
